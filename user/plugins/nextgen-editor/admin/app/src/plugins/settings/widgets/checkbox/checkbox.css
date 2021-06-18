@@ -1,0 +1,5 @@
+.ck-settings-popup .attribute-checkbox label {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+}

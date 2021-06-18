@@ -1,0 +1,10 @@
+{% block module_content %}
+    {% set data = data.page.header.glightbox %}
+
+    <div class="glightbox__module">
+        {% for item in data.items %}
+            {% set content = item.content %}
+            {% include "partials/lightbox.html.twig"  %}
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,412 @@
+<?php
+return [
+    '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
+    'filename' => 'C:/wamp64/www/gravPremium/user/plugins/nextgen-editor/blueprints.yaml',
+    'modified' => 1623983777,
+    'data' => [
+        'name' => 'NextGen Content Editor',
+        'type' => 'plugin',
+        'slug' => 'nextgen-editor',
+        'version' => '1.1.3',
+        'premium' => true,
+        'description' => 'The Next Generation Content Editor for Grav.  A true WYSIWYM Editor with markdown, shortcode, twig, and plugin capabilities.',
+        'icon' => 'pencil-square',
+        'author' => [
+            'name' => 'Trilby Media, LLC',
+            'email' => 'hello@trilby.media'
+        ],
+        'homepage' => 'https://getgrav.org/premium/nextgen-editor',
+        'keywords' => 'grav, editor, wysiywg, wysiwym, plugin, modern, premium',
+        'bugs' => 'https://github.com/getgrav/grav-premium-issues/labels/nextgen-editor',
+        'docs' => 'https://getgrav.org/premium/nextgen-editor/docs',
+        'license' => 'https://getgrav.org/premium/license',
+        'dependencies' => [
+            0 => [
+                'name' => 'grav',
+                'version' => '>=1.6.30'
+            ]
+        ],
+        'form' => [
+            'validation' => 'strict',
+            'fields' => [
+                'enabled' => [
+                    'type' => 'toggle',
+                    'label' => 'PLUGIN_ADMIN.PLUGIN_STATUS',
+                    'highlight' => 1,
+                    'default' => 0,
+                    'options' => [
+                        1 => 'PLUGIN_ADMIN.ENABLED',
+                        0 => 'PLUGIN_ADMIN.DISABLED'
+                    ],
+                    'validate' => [
+                        'type' => 'bool'
+                    ]
+                ],
+                'default_for_all' => [
+                    'type' => 'toggle',
+                    'label' => 'Default for All',
+                    'highlight' => 1,
+                    'default' => 0,
+                    'options' => [
+                        1 => 'PLUGIN_ADMIN.ENABLED',
+                        0 => 'PLUGIN_ADMIN.DISABLED'
+                    ],
+                    'validate' => [
+                        'type' => 'bool'
+                    ]
+                ],
+                'nextgenEditor_section' => [
+                    'type' => 'section',
+                    'title' => 'NextGen Content Editor Options',
+                    'underline' => true
+                ],
+                'options.nextgenEditor.height' => [
+                    'type' => 'number',
+                    'label' => 'Fixed Height',
+                    'help' => 'clear to be full height',
+                    'size' => 'x-small',
+                    'append' => 'px'
+                ],
+                'options.nextgenEditor.toolbar.sticky' => [
+                    'type' => 'toggle',
+                    'label' => 'Sticky Toolbar',
+                    'highlight' => 1,
+                    'options' => [
+                        1 => 'PLUGIN_ADMIN.YES',
+                        0 => 'PLUGIN_ADMIN.NO'
+                    ],
+                    'validate' => [
+                        'type' => 'bool'
+                    ]
+                ],
+                'options.nextgenEditor.toolbar.items' => [
+                    'type' => 'selectize',
+                    'size' => 'x-large',
+                    'label' => 'Toolbar',
+                    'help' => 'Configure what shows in the toolbar',
+                    'classes' => 'fancy',
+                    'validate' => [
+                        'type' => 'commalist'
+                    ]
+                ],
+                'options.nextgenEditor.htmlEmbed.showPreviews' => [
+                    'type' => 'toggle',
+                    'label' => 'Show HTML Snippets Previews',
+                    'highlight' => 0,
+                    'default' => 0,
+                    'options' => [
+                        1 => 'PLUGIN_ADMIN.YES',
+                        0 => 'PLUGIN_ADMIN.NO'
+                    ],
+                    'validate' => [
+                        'type' => 'bool'
+                    ]
+                ],
+                'transformations_section' => [
+                    'type' => 'section',
+                    'title' => 'Automatic Text Transformations',
+                    'underline' => true
+                ],
+                'options.transformations.typography' => [
+                    'type' => 'toggle',
+                    'label' => 'Enable Typography Transformations',
+                    'highlight' => 1,
+                    'default' => 1,
+                    'markdown' => 1,
+                    'description' => '<br />
+**Includes:** <br />
+ellipsis: transforms `...` to `…` <br />
+enDash: transforms `--` to `–` <br />
+emDash: transforms `---` to `—` <br />
+',
+                    'options' => [
+                        1 => 'PLUGIN_ADMIN.YES',
+                        0 => 'PLUGIN_ADMIN.NO'
+                    ],
+                    'validate' => [
+                        'type' => 'bool'
+                    ]
+                ],
+                'options.transformations.quotes' => [
+                    'type' => 'toggle',
+                    'label' => 'Enable Quotations Transformations',
+                    'highlight' => 1,
+                    'default' => 1,
+                    'markdown' => 1,
+                    'description' => '<br />
+**Includes:** <br />
+quotesPrimary: transforms `"Foo bar"` to `“Foo bar”` <br />
+quotesSecondary: transforms `\'Foo bar\'` to `‘Foo bar’` <br />
+',
+                    'options' => [
+                        1 => 'PLUGIN_ADMIN.YES',
+                        0 => 'PLUGIN_ADMIN.NO'
+                    ],
+                    'validate' => [
+                        'type' => 'bool'
+                    ]
+                ],
+                'options.transformations.symbols' => [
+                    'type' => 'toggle',
+                    'label' => 'Enable Symbols Transformations',
+                    'highlight' => 1,
+                    'default' => 1,
+                    'markdown' => 1,
+                    'description' => '<br />
+**Includes:** <br />
+trademark: transforms `(tm)` to `™` <br />
+registeredTrademark: transforms `(r)` to `®` <br />
+copyright: transforms `(c)` to `©` <br />
+',
+                    'options' => [
+                        1 => 'PLUGIN_ADMIN.YES',
+                        0 => 'PLUGIN_ADMIN.NO'
+                    ],
+                    'validate' => [
+                        'type' => 'bool'
+                    ]
+                ],
+                'options.transformations.mathematical' => [
+                    'type' => 'toggle',
+                    'label' => 'Enable Mathematical Transformations',
+                    'highlight' => 1,
+                    'default' => 1,
+                    'markdown' => 1,
+                    'description' => '<br />
+**Includes:** <br />
+oneHalf: transforms `1/2` to `½` <br />
+oneThird: transforms `1/3` to `⅓` <br />
+twoThirds: transforms `2/3` to `⅔` <br />
+oneForth: transforms `1/4` to `¼` <br />
+threeQuarters: transforms `3/4` to `¾` <br />
+lessThanOrEqual: transforms `<=` to `≤` <br />
+greaterThanOrEqual: transforms `>=` to `≥` <br />
+notEqual: transforms `!=` to `≠` <br />
+arrowLeft: transforms `<-` to `←` <br />
+arrowRight: transforms `->` to `→` <br />
+',
+                    'options' => [
+                        1 => 'PLUGIN_ADMIN.YES',
+                        0 => 'PLUGIN_ADMIN.NO'
+                    ],
+                    'validate' => [
+                        'type' => 'bool'
+                    ]
+                ],
+                'options.transformations.nonbreaking_space' => [
+                    'type' => 'toggle',
+                    'label' => 'Enable Non-breaking Space Transformations',
+                    'highlight' => 1,
+                    'default' => 1,
+                    'markdown' => 1,
+                    'description' => '<br />
+Converts non-breaking spaces (U+00A0 - `&nbsp;`) to regular spaces. <br /> If disabled they will be preserved.
+',
+                    'options' => [
+                        1 => 'PLUGIN_ADMIN.YES',
+                        0 => 'PLUGIN_ADMIN.NO'
+                    ],
+                    'validate' => [
+                        'type' => 'bool'
+                    ]
+                ],
+                'options.transformations.custom' => [
+                    'type' => 'array',
+                    'label' => 'Custom Transformations',
+                    'placeholder_key' => ':)',
+                    'placeholder_value' => '😀'
+                ],
+                'code_block_languages' => [
+                    'type' => 'section',
+                    'title' => 'Additional Code Block Languages',
+                    'text' => 'Add additional code block languages. By default NextGen Editor supports: `plaintext`, `bash`, `c`, `cs`, `cpp`, `css`, `diff`, `html`, `java`, `javascript`, `json`, `php`, `python`, `ruby`, `sh`, `typescript`, `xml`, `yaml`.',
+                    'underline' => true
+                ],
+                'options.nextgenEditor.codeBlock.languages' => [
+                    'type' => 'list',
+                    'label' => 'Custom Code Block Languages',
+                    'fields' => [
+                        '.language' => [
+                            'type' => 'text',
+                            'label' => 'Language',
+                            'description' => 'Single word, no spaces, lowercase',
+                            'placeholder' => 'scss'
+                        ],
+                        '.label' => [
+                            'type' => 'text',
+                            'label' => 'Label',
+                            'description' => 'Label to identify the Language',
+                            'placeholder' => 'Sass (Scss)'
+                        ]
+                    ]
+                ],
+                'media_sources_section' => [
+                    'type' => 'section',
+                    'title' => 'Extra Media Embed Providers',
+                    'underline' => true
+                ],
+                'options.extraMediaProviders' => [
+                    'type' => 'list',
+                    'title' => 'Custom Providers',
+                    'fields' => [
+                        '.name' => [
+                            'type' => 'text',
+                            'label' => 'Name',
+                            'description' => 'Single word, no spaces, camelCased',
+                            'placeholder' => 'unsplashRandom'
+                        ],
+                        '.url' => [
+                            'type' => 'text',
+                            'label' => 'URL Regex',
+                            'description' => 'Regexp defining the URL of the media',
+                            'placeholder' => '/^source\\.unsplash\\.com\\/random?.*/'
+                        ],
+                        '.html' => [
+                            'type' => 'textarea',
+                            'label' => 'HTML',
+                            'description' => 'Rendering HTML of the media. Use `${match[0...X]}` to target regexp matches',
+                            'placeholder' => '<img src="https://${match[0]}" />'
+                        ]
+                    ]
+                ],
+                'markdownit_section' => [
+                    'type' => 'section',
+                    'title' => 'Markdown → Editor Options',
+                    'underline' => true
+                ],
+                'options.markdownit.breaks' => [
+                    'type' => 'toggle',
+                    'label' => 'Line Breaks',
+                    'highlight' => 1,
+                    'options' => [
+                        1 => 'PLUGIN_ADMIN.YES',
+                        0 => 'PLUGIN_ADMIN.NO'
+                    ],
+                    'validate' => [
+                        'type' => 'bool'
+                    ]
+                ],
+                'options.markdownit.linkify' => [
+                    'type' => 'toggle',
+                    'label' => 'Linkify Text Links',
+                    'highlight' => 0,
+                    'options' => [
+                        1 => 'PLUGIN_ADMIN.YES',
+                        0 => 'PLUGIN_ADMIN.NO'
+                    ],
+                    'validate' => [
+                        'type' => 'bool'
+                    ]
+                ],
+                'options.markdownit.typographer' => [
+                    'type' => 'toggle',
+                    'label' => 'Typographer',
+                    'highlight' => 0,
+                    'options' => [
+                        1 => 'PLUGIN_ADMIN.YES',
+                        0 => 'PLUGIN_ADMIN.NO'
+                    ],
+                    'validate' => [
+                        'type' => 'bool'
+                    ]
+                ],
+                'options.markdownit.langPrefix' => [
+                    'type' => 'text',
+                    'label' => 'Codeblock Language Prefix',
+                    'placeholder' => 'language-'
+                ],
+                'options.markdownit.quotes' => [
+                    'type' => 'text',
+                    'label' => 'Fancy Quotes',
+                    'placeholder' => '“”‘’'
+                ],
+                'options.markdownit.highlight' => [
+                    'type' => 'text',
+                    'label' => 'Highlight Function',
+                    'placeholder' => 'function (/*str, lang*/) { return \'\'; }'
+                ],
+                'turndown_section' => [
+                    'type' => 'section',
+                    'title' => 'Editor → Markdown Options',
+                    'underline' => true
+                ],
+                'options.turndown.headingStyle' => [
+                    'type' => 'select',
+                    'label' => 'Heading Style',
+                    'options' => [
+                        'atx' => '## Heading Level 2',
+                        'setext' => 'Underlined Style'
+                    ]
+                ],
+                'options.turndown.hr' => [
+                    'type' => 'text',
+                    'label' => 'Thematic Break Style',
+                    'placehodler' => '---'
+                ],
+                'options.turndown.strongDelimiter' => [
+                    'type' => 'select',
+                    'label' => 'Strong Delimiter',
+                    'options' => [
+                        '__' => '__Underscore strong delimiter__',
+                        '**' => '**Star strong delimiter**'
+                    ]
+                ],
+                'options.turndown.emDelimiter' => [
+                    'type' => 'select',
+                    'label' => 'Emphasis Delimiter',
+                    'options' => [
+                        '_' => '_Underscore em delimiter_',
+                        '*' => '*Star em delimiter*'
+                    ]
+                ],
+                'options.turndown.bulletListMarker' => [
+                    'type' => 'select',
+                    'label' => 'Bullet List Marker',
+                    'options' => [
+                        '*' => '* Star bulleted style',
+                        '-' => '- Dash bulleted style',
+                        '+' => '+ Plus bulleted style'
+                    ]
+                ],
+                'options.turndown.codeBlockStyle' => [
+                    'type' => 'select',
+                    'label' => 'Code Block Style',
+                    'options' => [
+                        'fenced' => 'Fenced with ~~~',
+                        'indented' => 'Indented with spaces'
+                    ]
+                ],
+                'options.turndown.linkStyle' => [
+                    'type' => 'select',
+                    'label' => 'Link Style',
+                    'options' => [
+                        'inlined' => 'Inlined',
+                        'referenced' => 'Referenced'
+                    ]
+                ],
+                'options.turndown.linkReferenceStyle' => [
+                    'type' => 'select',
+                    'label' => 'Link Reference Style',
+                    'options' => [
+                        'full' => 'Full',
+                        'collapsed' => 'Collapsed',
+                        'shortcut' => 'Shortcut'
+                    ]
+                ],
+                'options.turndown.preformattedCode' => [
+                    'type' => 'toggle',
+                    'label' => 'Preformatted Code',
+                    'highlight' => 0,
+                    'default' => 0,
+                    'options' => [
+                        1 => 'PLUGIN_ADMIN.ENABLED',
+                        0 => 'PLUGIN_ADMIN.DISABLED'
+                    ],
+                    'validate' => [
+                        'type' => 'bool'
+                    ]
+                ]
+            ]
+        ]
+    ]
+];

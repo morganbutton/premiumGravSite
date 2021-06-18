@@ -1,0 +1,63 @@
+.ck-settings-popup {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1000000;
+}
+
+.ck-settings-popup > .backdrop {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.ck-settings-popup > .inside {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  overflow-y: auto;
+  padding: 10px 10px;
+  position: absolute;
+  width: 240px;
+  z-index: 1;
+}
+
+.ck-settings-popup .popup-title {
+  font-weight: 700;
+}
+
+.ck-settings-popup .delete {
+  cursor: pointer;
+  height: 16px;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  width: 16px;
+}
+
+.ck-settings-popup .buttons button {
+  margin-left: 4px;
+}
+
+.ck-settings-popup .buttons button:first-child {
+  margin-left: 0;
+}
+
+.ck-settings-popup .attributes {
+  margin: 12px 0 16px;
+}
+
+.ck-settings-popup .attribute {
+  margin-top: 10px;
+}
+
+.ck-settings-popup .attribute:first-child {
+  margin-top: 0;
+}
+
+.ck-settings-popup .attribute .title {
+  font-weight: 700;
+}

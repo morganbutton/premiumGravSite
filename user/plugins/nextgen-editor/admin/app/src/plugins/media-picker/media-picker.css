@@ -1,0 +1,7 @@
+.remodal-mediapicker .mediapicker-scroll {
+  overflow-y: auto;
+}
+
+#ck-media-picker {
+  display: none;
+}

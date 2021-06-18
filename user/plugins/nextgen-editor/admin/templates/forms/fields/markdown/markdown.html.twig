@@ -1,0 +1,129 @@
+{% extends "forms/field.html.twig" %}
+
+{% if not nextgenEditorOptions %}
+    {% set nextgenEditorOptions = {options: config.plugins['nextgen-editor'].options}|merge(field['nextgen-editor']|default({})) %}
+    {% set transformationsOptions = nextgenEditorOptions.options.transformations %}
+    {% set extraMediaProviders = nextgenEditorOptions.options.extraMediaProviders %}
+
+    {% set transformationGroups = [] %}
+    {% if transformationsOptions.typography %}
+        {% set transformationGroups = transformationGroups|merge(['typography']) %}
+    {% endif %}
+    {% if transformationsOptions.quotes %}
+        {% set transformationGroups = transformationGroups|merge(['quotes']) %}
+    {% endif %}
+    {% if transformationsOptions.symbols %}
+        {% set transformationGroups = transformationGroups|merge(['symbols']) %}
+    {% endif %}
+    {% if transformationsOptions.mathematical %}
+        {% set transformationGroups = transformationGroups|merge(['mathematical']) %}
+    {% endif %}
+    {% set customTransformationGroups = [] %}
+
+    {% for key, value in transformationsOptions.custom %}
+        {% set customTransformationGroups = customTransformationGroups|merge([{ from: key, to: value }]) %}
+    {% endfor %}
+
+    {% set transformations = {
+        typing: {
+            transformations: {
+                include: transformationGroups,
+                extra: customTransformationGroups
+            }
+        }
+    } %}
+
+    {% set mediaProviders = [] %}
+    {% for provider in extraMediaProviders %}
+        {% set mediaProviders = mediaProviders|merge([provider]) %}
+    {% endfor %}
+
+    {% set providers = {
+        mediaEmbed: {
+            extraProviders: mediaProviders
+        }
+    } %}
+
+    {% set nextgenEditorOptions = nextgenEditorOptions|merge({ options: nextgenEditorOptions.options|merge({ nextgenEditor: nextgenEditorOptions.options.nextgenEditor|merge(transformations)|merge(providers) }) }) %}
+{% endif %}
+
+{% block field %}
+    <div class="form-field {{ field.classes|default('') }}">
+        <div class="form-label{% if not vertical %} block size-1-3 pure-u-1-3{% endif %}">
+            <label>
+                {% if field.help %}
+                    <span class="tooltip" data-asTooltip-position="w" title="{{ field.help|e|tu }}">{{ field.label|tu }}</span>
+                {% else %}
+                    {{ field.label|tu }}
+                {% endif %}
+                {{ field.validate.required in ['on', 'true', 1] ? '<span class="required">*</span>' }}
+            </label>
+        </div>
+        <div class="form-data nextgen-editor">
+            <div
+                    class="nextgen-editor-form {{ form_field_wrapper_classes ?: 'form-textarea-wrapper' }} {{ field.size }} {{ field.wrapper_classes }} loading"
+                    {% if nextgenEditorOptions.options.nextgenEditor.height %}style="height: {{ nextgenEditorOptions.options.nextgenEditor.height }}px"{% endif %}
+            >
+                {% if nextgenEditorOptions.options.nextgenEditor.height %}
+                    <style>.nextgen-editor-form .ck-editor__editable_inline {
+                            height: {{ nextgenEditorOptions.options.nextgenEditor.height - 38 }}px
+                        }</style>
+                {% endif %}
+                {# <img class="nextgen-editor-loader" src="{{ url('plugin://nextgen-editor/admin/assets/loader.png', true) }}"> #}
+                <div class="spinner nextgen-editor-loader">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+                <textarea
+                {# required attribute structures #}
+                name="{{ (scope ~ field.name)|fieldName }}"
+                data-nextgen-editor="{{ nextgenEditorOptions | json_encode|e('html_attr') }}"
+                {# input attribute structures #}
+                        {% block input_attributes %}
+                            class="{{ form_field_textarea_classes }} {{ field.classes }}"
+                            {% if field.id is defined %}id="{{ field.id|e }}" {% endif %}
+                            {% if field.style is defined %}style="{{ field.style|e }}" {% endif %}
+                            {% if field.disabled or isDisabledToggleable %}disabled="disabled"{% endif %}
+                            {% if field.placeholder %}placeholder="{{ field.placeholder|t }}"{% endif %}
+                            {% if field.autofocus in ['on', 'true', 1] %}autofocus="autofocus"{% endif %}
+                            {% if field.novalidate in ['on', 'true', 1] %}novalidate="novalidate"{% endif %}
+                            {% if field.readonly in ['on', 'true', 1] %}readonly="readonly"{% endif %}
+                            {% if field.autocomplete in ['on', 'off'] %}autocomplete="{{ field.autocomplete }}"{% endif %}
+                            {% if required %}required="required"{% endif %}
+                            {% if field.validate.pattern %}pattern="{{ field.validate.pattern }}"{% endif %}
+                            {% if field.validate.message %}title="{% if grav.twig.twig.filters['tu'] is defined %}{{ field.validate.message|tu|e }}{% else %}{{ field.validate.message|t|e }}{% endif %}"{% endif %}
+                            {% if field.rows is defined %}rows="{{ field.rows }}"{% endif %}
+                            {% if field.cols is defined %}cols="{{ field.cols }}"{% endif %}
+                            {% if field.minlength is defined %}minlength="{{ field.minlength }}"{% endif %}
+                            {% if field.maxlength is defined %}maxlength="{{ field.maxlength }}"{% endif %}
+                        {% endblock %}
+                >{{ value|e('html') }}</textarea>
+            </div>
+        </div>
+    </div>
+
+    {% if not config.plugins['nextgen-editor'].loadedTemplate %}
+        {% do config.set('plugins.nextgen-editor.loadedTemplate', true) %}
+        <div id="ck-media-picker" data-page="{{ admin.page.route }}">
+            {% include "forms/fields/mediapicker/mediapicker.html.twig" with { value: '', route: '', pages: grav['admin'].enablePages().root(), field: { type: 'mediapicker', name: 'ck-media-picker' } } %}
+        </div>
+        <div id="page-picker-button-wrapper" class="parents-wrapper">
+            <div id="page-picker-button" data-parents="data[page-picker]" data-remodal-target="page-picker"></div>
+            <input type="hidden" name="data[page-picker]" data-field-name="route">
+        </div>
+        <div id="page-picker-modal" class="remodal parents-container" data-remodal-id="page-picker"
+             data-remodal-options="hashTracking: false, stack: true">
+            <h1>Page Picker</h1>
+            <div class="grav-loading">
+                <div class="grav-loader">Loading...</div>
+            </div>
+            <div class="parents-content"></div>
+            <div class="button-bar">
+                <a class="button secondary remodal-cancel" data-remodal-action="cancel" href="#"><i
+                            class="fa fa-fw fa-close"></i> {{ "PLUGIN_ADMIN.CANCEL"|tu }}</a>
+                <a class="button" data-parents-select href="#" id="page-picker-modal-submit"><i
+                            class="fa fa-fw fa-check"></i> {{ "PLUGIN_ADMIN.CONTINUE"|tu }}</a>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

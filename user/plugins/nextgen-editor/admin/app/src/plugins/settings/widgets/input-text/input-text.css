@@ -1,0 +1,8 @@
+.ck-settings-popup .attribute-input-text input {
+  display: block;
+  width: 100%;
+}
+
+.ck-settings-popup .attribute-input-text input::placeholder {
+  color: #ccc;
+}

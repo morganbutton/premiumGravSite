@@ -1,0 +1,22 @@
+{% if video %}
+  {% set type = 'video' %}
+  {% set target = page.media[video].url ?? video %}
+{% else %}
+  {% set type = 'image' %}
+  {% set target = page.media[image].url ?? image %}
+{% endif %}
+
+<a href="{{ target }}" class="glightbox {{ class }}"
+   {% if gallery %}data-gallery="{{ gallery }}"{% endif %}
+   {% if title %}data-title="{{ title }}"{% endif %}
+   {% if desc %}data-description="{{ desc }}"{% endif %}
+   {% if descPosition %}data-desc-position="{{ descPosition }}"{% endif %}
+   {% if type %}data-type="{{ type }}"{% endif %}
+   {% if effect %}data-effect="{{ effect }}"{% endif %}
+   {% if width %}data-width="{{ width }}"{% endif %}
+   {% if height %}data-height="{{ height }}"{% endif %}
+   {% if zoomable %}data-zoomable="{{ zoomable }}"{% endif %}
+   {% if draggable %}data-draggable="{{ draggable }}"{% endif %}
+   >
+    {{ content|raw }}
+</a>

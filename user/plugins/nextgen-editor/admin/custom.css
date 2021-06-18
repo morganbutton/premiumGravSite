@@ -1,0 +1,292 @@
+/*:root {*/
+/*    !* Overrides the border radius setting in the theme. *!*/
+/*    --ck-border-radius: 4px;*/
+
+/*    !* Overrides the default font size in the theme. *!*/
+/*    --ck-font-size-base: 14px;*/
+
+/*    !* Helper variables to avoid duplication in the colors. *!*/
+/*    --ck-custom-background: hsl(270, 1%, 29%);*/
+/*    --ck-custom-foreground: hsl(255, 3%, 18%);*/
+/*    --ck-custom-border: hsl(300, 1%, 22%);*/
+/*    --ck-custom-white: hsl(0, 0%, 100%);*/
+
+/*    !* -- Overrides generic colors. ------------------------------------------------------------- *!*/
+
+/*    --ck-color-base-foreground: var(--ck-custom-background);*/
+/*    --ck-color-focus-border: hsl(208, 90%, 62%);*/
+/*    --ck-color-text: hsl(0, 0%, 98%);*/
+/*    --ck-color-shadow-drop: hsla(0, 0%, 0%, 0.2);*/
+/*    --ck-color-shadow-inner: hsla(0, 0%, 0%, 0.1);*/
+
+/*    !* -- Overrides the default .ck-button class colors. ---------------------------------------- *!*/
+
+/*    --ck-color-button-default-background: var(--ck-custom-background);*/
+/*    --ck-color-button-default-hover-background: hsl(270, 1%, 22%);*/
+/*    --ck-color-button-default-active-background: hsl(270, 2%, 20%);*/
+/*    --ck-color-button-default-active-shadow: hsl(270, 2%, 23%);*/
+/*    --ck-color-button-default-disabled-background: var(--ck-custom-background);*/
+
+/*    --ck-color-button-on-background: var(--ck-custom-foreground);*/
+/*    --ck-color-button-on-hover-background: hsl(255, 4%, 16%);*/
+/*    --ck-color-button-on-active-background: hsl(255, 4%, 14%);*/
+/*    --ck-color-button-on-active-shadow: hsl(240, 3%, 19%);*/
+/*    --ck-color-button-on-disabled-background: var(--ck-custom-foreground);*/
+
+/*    --ck-color-button-action-background: hsl(168, 76%, 42%);*/
+/*    --ck-color-button-action-hover-background: hsl(168, 76%, 38%);*/
+/*    --ck-color-button-action-active-background: hsl(168, 76%, 36%);*/
+/*    --ck-color-button-action-active-shadow: hsl(168, 75%, 34%);*/
+/*    --ck-color-button-action-disabled-background: hsl(168, 76%, 42%);*/
+/*    --ck-color-button-action-text: var(--ck-custom-white);*/
+
+/*    --ck-color-button-save: hsl(120, 100%, 46%);*/
+/*    --ck-color-button-cancel: hsl(15, 100%, 56%);*/
+
+/*    !* -- Overrides the default .ck-dropdown class colors. -------------------------------------- *!*/
+
+/*    --ck-color-dropdown-panel-background: var(--ck-custom-background);*/
+/*    --ck-color-dropdown-panel-border: var(--ck-custom-foreground);*/
+
+/*    !* -- Overrides the default .ck-splitbutton class colors. ----------------------------------- *!*/
+
+/*    --ck-color-split-button-hover-background: var(--ck-color-button-default-hover-background);*/
+/*    --ck-color-split-button-hover-border: var(--ck-custom-foreground);*/
+
+/*    !* -- Overrides the default .ck-input class colors. ----------------------------------------- *!*/
+
+/*    --ck-color-input-background: var(--ck-custom-foreground);*/
+/*    --ck-color-input-border: hsl(257, 3%, 43%);*/
+/*    --ck-color-input-text: hsl(0, 0%, 98%);*/
+/*    --ck-color-input-disabled-background: hsl(255, 4%, 21%);*/
+/*    --ck-color-input-disabled-border: hsl(250, 3%, 38%);*/
+/*    --ck-color-input-disabled-text: hsl(0, 0%, 46%);*/
+
+/*    !* -- Overrides the default .ck-list class colors. ------------------------------------------ *!*/
+
+/*    --ck-color-list-background: var(--ck-custom-background);*/
+/*    --ck-color-list-button-hover-background: var(--ck-color-base-foreground);*/
+/*    --ck-color-list-button-on-background: var(--ck-color-base-active);*/
+/*    --ck-color-list-button-on-background-focus: var(--ck-color-base-active-focus);*/
+/*    --ck-color-list-button-on-text: var(--ck-color-base-background);*/
+
+/*    !* -- Overrides the default .ck-balloon-panel class colors. --------------------------------- *!*/
+
+/*    --ck-color-panel-background: var(--ck-custom-background);*/
+/*    --ck-color-panel-border: var(--ck-custom-border);*/
+
+/*    !* -- Overrides the default .ck-toolbar class colors. --------------------------------------- *!*/
+
+/*    --ck-color-toolbar-background: var(--ck-custom-background);*/
+/*    --ck-color-toolbar-border: var(--ck-custom-border);*/
+
+/*    !* -- Overrides the default .ck-tooltip class colors. --------------------------------------- *!*/
+
+/*    --ck-color-tooltip-background: hsl(252, 7%, 14%);*/
+/*    --ck-color-tooltip-text: hsl(0, 0%, 93%);*/
+
+/*    !* -- Overrides the default colors used by the ckeditor5-image package. --------------------- *!*/
+
+/*    --ck-color-image-caption-background: hsl(0, 0%, 97%);*/
+/*    --ck-color-image-caption-text: hsl(0, 0%, 20%);*/
+
+/*    !* -- Overrides the default colors used by the ckeditor5-widget package. -------------------- *!*/
+
+/*    --ck-color-widget-blurred-border: hsl(0, 0%, 87%);*/
+/*    --ck-color-widget-hover-border: hsl(43, 100%, 68%);*/
+/*    --ck-color-widget-editable-focus-background: var(--ck-custom-white);*/
+
+/*    !* -- Overrides the default colors used by the ckeditor5-link package. ---------------------- *!*/
+
+/*    --ck-color-link-default: hsl(190, 100%, 75%);*/
+/*}*/
+
+#admin-main .nextgen-editor-form {
+    position: relative;
+}
+
+#admin-main .nextgen-editor-form .nextgen-editor-loader {
+    display: none;
+    transform: translate(-50%, -100%);
+    position: absolute;
+    height: 140px;
+    width: 140px;
+    left: 50%;
+    top: 50%;
+}
+
+#admin-main .nextgen-editor-form.loading {
+    border: 1px #e6e6e6 solid;
+    border-radius: 4px;
+    height: 400px;
+}
+
+#admin-main .nextgen-editor-form.loading textarea {
+    visibility: hidden;
+}
+
+#admin-main .nextgen-editor-form.loading .nextgen-editor-loader {
+    display: block;
+}
+
+#admin-main .nextgen-editor,
+#admin-main .ck-editor__top {
+    position: relative;
+}
+
+#admin-main .ck-editor .ck-toolbar .ck-dropdown .ck-list {
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+#admin-main .ck-editor .ck-content .image {
+    margin: 1rem 0;
+}
+
+#admin-main .ck-editor .ck-content {
+    color: #444;
+    min-height: 30vh;
+}
+
+#admin-main .ck-editor a {
+    color: #1c90fb !important;
+}
+
+#admin-main .ck-editor h1,
+#admin-main .ck-editor h2,
+#admin-main .ck-editor h3,
+#admin-main .ck-editor h4,
+#admin-main .ck-editor h5,
+#admin-main .ck-editor h6 {
+    font-weight: 700;
+    font-style: normal;
+    color: #222 !important;
+    padding: 0 !important;
+    letter-spacing: normal;
+    border: none !important;
+    margin: 0.5rem 0 0.75rem;
+}
+
+#admin-main .ck-editor h1 {
+    margin: 0.5rem 0 1rem;
+    font-size: 30px;
+}
+
+#admin-main .ck-editor h2 {
+    margin: 0.5rem 0 1rem;
+    font-size: 24px;
+}
+
+#admin-main .ck-editor h3 {
+    font-size: 20px;
+}
+
+#admin-main .ck-editor h4 {
+    font-size: 18px;
+}
+
+#admin-main .ck-editor h5 {
+    font-size: 16px;
+}
+
+#admin-main .ck-editor h6 {
+    font-size: 14px;
+    font-weight: 600 !important;
+}
+
+#admin-main .ck-editor p {
+    padding: 0;
+    margin: 0 0 1rem;
+    letter-spacing: normal;
+}
+
+#admin-main .ck.ck-editor__editable_inline > :first-child {
+    margin-top: 14px;
+}
+
+#admin-main .ck-editor code {
+    background-color: rgba(168,209,255,0.2);
+    color: #075289;
+}
+
+#admin-main .ck-editor pre code {
+    font-size: 14px;
+    background-color: transparent;
+}
+
+#admin-main .ck-editor blockquote {
+    border-color: #ccc !important;
+    background-color: #f0f0f0 !important;
+}
+
+#admin-main .ck-editor blockquote p {
+    color: #444 !important;
+}
+
+#admin-main .ck-editor hr {
+    border-color: #eee !important;
+}
+
+#admin-main .ck-editor table td,
+#admin-main .ck-editor table th,
+#admin-main .ck-editor table tr {
+    border-color: #eee !important;
+}
+
+#admin-main .nextgen-editor-words {
+    display: flex;
+    font-size: 12px;
+}
+#admin-main .nextgen-editor-words .chars-line {
+    margin-left: 16px;
+}
+
+#admin-main .ck-editor .ck.ck-code-block-dropdown .ck-dropdown__panel {
+    max-height: inherit;
+}
+
+[data-remodal-mediapicker] .pages-list-container, [data-remodal-mediapicker] .js__reset-pages-filter {
+    display: none;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+
+    position: relative;
+    margin: 25px auto;
+}
+
+.double-bounce1, .double-bounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #d80100;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+    0%, 100% { -webkit-transform: scale(0.0) }
+    50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+    0%, 100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    } 50% {
+          transform: scale(1.0);
+          -webkit-transform: scale(1.0);
+      }
+}

@@ -1,0 +1,21 @@
+#page-picker-button-wrapper {
+  display: none;
+}
+
+#page-picker-modal h1 {
+  border-bottom: 1px solid #e6e6e6;
+  color: #414147;
+  font-size: 1.5rem;
+  letter-spacing: -1px;
+  margin: 0;
+  padding: 0 1.5rem 0.5rem;
+}
+
+#page-picker-modal .button-bar {
+  background: #f7f7f7;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin: 0;
+  padding: 1.2rem 3rem;
+  width: 100%;
+}

@@ -1,0 +1,15 @@
+.ck-table-cell-properties-form .ck-form__row {
+  display: none;
+}
+
+.ck-table-cell-properties-form .ck-form__row.ck-table-form__action-row {
+  display: flex;
+}
+
+.ck-table-cell-properties-form .ck-form__row.ck-table-cell-properties-form__alignment-row {
+  display: flex;
+}
+
+.ck-table-cell-properties-form .ck-form__row.ck-table-cell-properties-form__alignment-row > div:last-child {
+  display: none;
+}

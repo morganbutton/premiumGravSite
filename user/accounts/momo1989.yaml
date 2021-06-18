@@ -1,0 +1,11 @@
+state: enabled
+email: morgan_button@outlook.com
+fullname: 'morgan button'
+title: Admin
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+hashed_password: $2y$10$5drBcj98dYuS4SsmCaTkPOYtBKvrtrcpJRGjKpmh4a5CIOlJ3iFVG
